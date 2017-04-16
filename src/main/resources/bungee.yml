@@ -1,0 +1,6 @@
+name: Party-Jump
+version: ${project.version}
+author: Simonsator
+depends: [PartyAndFriends]
+main: de.simonsator.partyandfriends.extensions.partyjump.JumpPlugin
+description: An add-on for party and friends extended
