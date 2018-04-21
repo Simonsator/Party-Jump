@@ -20,6 +20,8 @@ public class JumpConfig extends ConfigurationCreator {
 	}
 
 	private void loadDefaults() {
+		set("General.DisableAutoJumpOnServerSwitch", false);
+		set("General.InformAboutLeaderServerSwitch", false);
 		set("Commands.Party.Jump.Names", "jump", "warp");
 		set("Commands.Party.Jump.Permission", "");
 		set("Commands.Party.Jump.Priority", 550);
@@ -27,6 +29,7 @@ public class JumpConfig extends ConfigurationCreator {
 		set("Messages.Party.Jump.Leader", " &cYou are the leader of the party. You cannot jump to yourself.");
 		set("Messages.Party.Jump.AlreadyOnServer", " &cYou are already on the server.");
 		set("Messages.Party.Jump.JumpedTo", " &6You jumped to the party leader.");
+		set("Messages.Party.LeaderChangedServer", " &6The leader jumped to the server [SERVER].");
 	}
 
 	public void reloadConfiguration() throws IOException {
