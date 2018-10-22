@@ -46,7 +46,7 @@ public class JumpPlugin extends PAFExtension implements Listener {
 	public void onServerSwitch(ServerSwitchEvent pEvent) {
 		OnlinePAFPlayer player = PAFPlayerManager.getInstance().getPlayer(pEvent.getPlayer());
 		PlayerParty party = player.getParty();
-		if (party.isLeader(player)) {
+		if (party != null && party.isLeader(player)) {
 			party.sendMessage(PartyCommand.getInstance().getPrefix() + changedServerMessage.replace("[SERVER", pEvent.getPlayer().getServer().getInfo().getName()));
 		}
 	}
