@@ -1,5 +1,6 @@
 package de.simonsator.partyandfriends.extensions.partyjump.configuration;
 
+import de.simonsator.partyandfriends.api.PAFExtension;
 import de.simonsator.partyandfriends.utilities.ConfigurationCreator;
 
 import java.io.File;
@@ -11,12 +12,12 @@ import java.io.IOException;
  */
 public class JumpConfig extends ConfigurationCreator {
 
-	public JumpConfig(File pFile) throws IOException {
-		super(pFile);
+	public JumpConfig(File pFile, PAFExtension pPlugin) throws IOException {
+		super(pFile, pPlugin, true);
 		readFile();
 		loadDefaults();
 		saveFile();
-		process(configuration);
+		process();
 	}
 
 	private void loadDefaults() {
@@ -30,9 +31,5 @@ public class JumpConfig extends ConfigurationCreator {
 		set("Messages.Party.Jump.AlreadyOnServer", " &cYou are already on the server.");
 		set("Messages.Party.Jump.JumpedTo", " &6You jumped to the party leader.");
 		set("Messages.Party.LeaderChangedServer", " &6The leader jumped to the server [SERVER].");
-	}
-
-	public void reloadConfiguration() throws IOException {
-
 	}
 }

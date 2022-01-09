@@ -6,7 +6,7 @@
 
 	<groupId>de.simonsator</groupId>
 	<artifactId>Party-Jump</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.3-RELEASE</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -29,30 +29,30 @@
 	<repositories>
 		<repository>
 			<id>Simonsators-Repo</id>
-			<url>http://simonsator.de/repo</url>
+			<url>https://simonsator.de/repo</url>
 		</repository>
 		<repository>
 			<id>Bungee Repo</id>
-			<url>http://repo.md-5.net/content/groups/public/</url>
+			<url>https://repo.md-5.net/content/groups/public/</url>
 		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>de.simonsator</groupId>
 			<artifactId>BungeecordPartyAndFriends</artifactId>
-			<version>1.0.67</version>
+			<version>1.0.85</version>
 		</dependency>
 		<dependency>
 			<groupId>net.md-5</groupId>
 			<artifactId>bungeecord-api</artifactId>
-			<version>1.11-SNAPSHOT</version>
+			<version>1.16-R0.4</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.md-5</groupId>
 			<artifactId>bungeecord-api</artifactId>
-			<version>1.11-SNAPSHOT</version>
+			<version>1.16-R0.4</version>
 			<type>javadoc</type>
 			<scope>provided</scope>
 		</dependency>

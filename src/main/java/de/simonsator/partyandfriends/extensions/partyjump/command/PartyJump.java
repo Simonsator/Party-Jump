@@ -5,9 +5,9 @@ import de.simonsator.partyandfriends.api.party.PartyAPI;
 import de.simonsator.partyandfriends.api.party.PartyManager;
 import de.simonsator.partyandfriends.api.party.PlayerParty;
 import de.simonsator.partyandfriends.api.party.abstractcommands.PartySubCommand;
+import de.simonsator.partyandfriends.utilities.ConfigurationCreator;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ServerInfo;
-import net.md_5.bungee.config.Configuration;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import java.util.List;
  * @version 1.0.0 16.04.17
  */
 public class PartyJump extends PartySubCommand {
-	private final Configuration CONFIG;
+	private final ConfigurationCreator CONFIG;
 
-	public PartyJump(List<String> pCommands, int pPriority, String pHelpText, String pPermission, Configuration pConfig) {
+	public PartyJump(List<String> pCommands, int pPriority, String pHelpText, String pPermission, ConfigurationCreator pConfig) {
 		super(pCommands, pPriority, pHelpText, pPermission);
 		CONFIG = pConfig;
 	}
@@ -32,12 +32,12 @@ public class PartyJump extends PartySubCommand {
 		if (!isInParty(pPlayer, party))
 			return;
 		if (party.isLeader(pPlayer)) {
-			sendError(pPlayer, new TextComponent(PREFIX + CONFIG.getString("Messages.Party.Jump.Leader")));
+			sendError(pPlayer, new TextComponent(TextComponent.fromLegacyText(PREFIX + CONFIG.getString("Messages.Party.Jump.Leader"))));
 			return;
 		}
 		ServerInfo leaderServer = party.getLeader().getServer();
 		if (leaderServer.equals(pPlayer.getServer())) {
-			sendError(pPlayer, new TextComponent(PREFIX + CONFIG.getString("Messages.Party.Jump.AlreadyOnServer")));
+			sendError(pPlayer, new TextComponent(TextComponent.fromLegacyText(PREFIX + CONFIG.getString("Messages.Party.Jump.AlreadyOnServer"))));
 			return;
 		}
 		pPlayer.connect(leaderServer);
